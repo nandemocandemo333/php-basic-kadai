@@ -1,38 +1,49 @@
+
 <?php
-        class Food {
-            private $name;
-            private $price;
+    class Food {
+      // プロパティ定義
+      private $name;
+      private $price;
+// コンストラクタ定義
+      public function __construct(string $name, int $price) {
+        $this->name = $name;
+        $this->price = $price;
+      }
+// priceプロパティの値を出力するメソッド
+      public function show_price() {
+        echo $this->price;
+      }
+    }
+class Animal {
+      // プロパティ定義
+      private $name;
+      private $height;
+      private $weight; 
 
-            public function show_price(int $price) {
-                $this->price =$price;
-            }
-            public function __construct(string $name,int $price) {
-                $this->name =$name;
-                $this->price =$price;
-            }
-        }
-        $Food =new Food('potato',250);
-        print_r($Food);
-        ?>
-        <br>
-        <?php
-        class Animal {
-            private $name;
-            private $height;
-            private $weight;
+      // コンストラクタ定義
+      public function __construct(string $name, int $height, int $weight) {
+        $this->name = $name;
+        $this->height = $height;
+        $this->weight = $weight;
+      }
 
-            public function show_height(int $height) {
-                $this->height =$height;
-            }
-            public function __construct(string $name,int $height,string $weight) {
-                $this->name =$name;
-                $this->height =$height;
-                $this->weight =$weight;
-            }
-        }
-        $Animal =new Animal('dog',60,5000);
-        print_r($Animal);
-        $Food->show_price(250);
-        $Animal->show_height(60);
+      // heightプロパティの値を出力するメソッド
+      public function show_height() {
+        echo $this->height;
+      }
+    }
+// インスタンス化
+    $potato = new Food('potato', 250);
+    $dog = new Animal('dog', 60, 5000);
 
-        ?>
+    // インスタンスを画面に出力
+    print_r($potato);
+    echo '<br>';
+    print_r($dog);
+    echo '<br>';
+
+    // メソッドにアクセスして実行
+    $potato->show_price();
+    echo '<br>';
+    $dog->show_height();
+    ?>
